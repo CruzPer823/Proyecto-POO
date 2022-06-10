@@ -13,6 +13,7 @@ bool isNumber(const string& str){
 }
 
 int main(){
+  Videos* arr[100];
   string opcion,opcion2;
   int opcion1;
   cout<<"BIENVENIDO AL MENU DE VIDEOS"<<"\n"<<
@@ -37,7 +38,9 @@ int main(){
       char delimitador = ',';
       getline(archivo, linea);
       string ID,NOMBRE,DURACION,GENERO,CALIFICACION;
-      int calificacion;
+      double calificacion;
+      int c;
+      c=0;
       while (getline(archivo,linea)){
         stringstream stream(linea);
 
@@ -48,6 +51,9 @@ int main(){
         getline(stream,CALIFICACION,delimitador);
 
         calificacion = stoi(CALIFICACION);
+
+        arr[c] = new Videos(ID,NOMBRE,DURACION,GENERO,calificacion);
+        c+=1;
       }
       cout << "Le gustaría desplegar por género o por calificación"<<"\n"<<
       "1-. Por género" << "\n" << "2-. Por calificación"<<"\n"<<
@@ -73,18 +79,20 @@ int main(){
           cin >> usuarioCalif;
 
           while (isNumber(usuarioCalif)==false){
-            cout<<"Ingrese una cantidad válidad entre 0 y 10"<<endl;
+            cout<<"Ingrese una cantidad válidad entre 0 y 5"<<endl;
             cin>>usuarioCalif;
           }
           usuarioCalifInt=stoi(usuarioCalif);
-          while (usuarioCalifInt > 10){
-            cout << "Ingrese una cantidad válida entre 0 y 10"<<endl;
+          while (usuarioCalifInt > 5){
+            cout << "Ingrese una cantidad válida entre 0 y 5"<<endl;
             cin >> usuarioCalifInt;
           }
-          if (calificacion > usuarioCalifInt){
-            Videos video1(ID,NOMBRE,DURACION,GENERO,calificacion);
-            cout<<video1.getNombre()<<endl;
+          for (int i=0; i < c; i++){
+            if ( arr[i]->getCalif() > usuarioCalifInt){
+              cout<<arr[i]->getNombre()<<endl;
+            }
           }
+
     }
 
         archivo.close();

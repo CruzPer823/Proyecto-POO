@@ -13,7 +13,8 @@ class Videos {
   /*virtual double mostrarCalificacion();
   virtual double calificarVideo();*/
   std::string getNombre();
-  int getCalif();
+  float getCalif();
+
 };
 
 #endif // VIDEO_H_INCLUDED

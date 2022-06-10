@@ -24,6 +24,6 @@ std::string Videos:: getNombre(){
   return nombre;
 }
 
-int Videos :: getCalif(){
+float Videos :: getCalif(){
   return calificacion;
 }
