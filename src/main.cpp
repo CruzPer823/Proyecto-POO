@@ -12,18 +12,24 @@ int main(){
   string linea;
   char delimitador = ',';
   getline(archivo, linea);
+  string ID,NOMBRE,DURACION,GENERO,CALIFICACION;
+  int calificacion;
   while (getline(archivo,linea)){
     stringstream stream(linea);
-    string ID,NOMBRE,DURACION,GENERO,CALIFICACION;
+
     getline(stream,ID,delimitador);
     getline(stream,NOMBRE,delimitador);
     getline(stream,DURACION,delimitador);
     getline(stream,GENERO,delimitador);
     getline(stream,CALIFICACION,delimitador);
 
+    calificacion = stoi(CALIFICACION);
   }
-  Videos video1(ID,NOMBRE,DURACION,GENERO);
-  cout<<video1.getNombre()<<endl;
+  if (calificacion > 4){
+    Videos video1(ID,NOMBRE,DURACION,GENERO,calificacion);
+    cout<<video1.getNombre()<<endl;
+  }
+
   archivo.close();
   return 0;
 }

@@ -2,11 +2,13 @@
 
 Videos :: Videos(){}
 
-Videos :: Videos(std::string id,std::string nombre,std::string duracion,std::string genero){
+Videos :: Videos(std::string id,std::string nombre,std::string duracion,
+  std::string genero, int calificacion){
   this -> id = id;
   this -> nombre = nombre;
   this -> duracion = duracion;
   this -> genero = genero;
+  this -> calificacion = calificacion;
 }
 
 /*double Videos :: mostrarCalificacion(){ //el string datos pienso que sea le vector del txt, pero no c como se mete
@@ -20,4 +22,8 @@ Videos :: Videos(std::string id,std::string nombre,std::string duracion,std::str
 
 std::string Videos:: getNombre(){
   return nombre;
+}
+
+int Videos :: getCalif(){
+  return calificacion;
 }

@@ -6,12 +6,14 @@
 class Videos {
   protected:
     std::string id, nombre, duracion, genero;
+    int calificacion;
   public:
   Videos();
-  Videos(std::string,std::string,std::string,std::string);
+  Videos(std::string,std::string,std::string,std::string,int calificacion);
   /*virtual double mostrarCalificacion();
   virtual double calificarVideo();*/
   std::string getNombre();
+  int getCalif();
 };
 
 #endif // VIDEO_H_INCLUDED
