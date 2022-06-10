@@ -129,6 +129,9 @@ int main(){
       string ID,ID_EPISODIO,TEMPORADA,NOMBRE_CAPITULO, NOMBRE,DURACION,GENERO,CALIFICACION;
       double calificacion;
       int c;
+      string opcion3,calificacionSerie;
+      int opcion3int;
+      double califint;
       c=0;
       while (getline(archivo,linea)){
         stringstream stream(linea);
@@ -143,11 +146,33 @@ int main(){
         getline(stream,CALIFICACION,delimitador);
 
         calificacion = stod(CALIFICACION);
-cout<<calificacion<<endl;
+
         arr[c] = new Series(ID,ID_EPISODIO,TEMPORADA,NOMBRE_CAPITULO,NOMBRE,DURACION,GENERO,calificacion);
         c+=1;
       }
+      cout << "Escoge una de las siguientes series: "<<endl;
+      for (int i=0; i < c; i++){
+        if (c>1 && arr[i] -> getNombre() == arr[i+1] -> getNombre()){
+            cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
+        }
+        else{
+          cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
+        }
+
     }
+      cin >> opcion3;
+      opcion3int = stoi(opcion3);
+      cout << "Ingresa una calificacion: "<<endl;
+      cin>>calificacionSerie;
+      califint = stod(calificacionSerie);
+      for (int i=0; i < c; i++){
+
+        if(arr[i]->getNombre() == arr[opcion3int-1]->getNombre() && arr[i]->getCalif()>califint){
+          cout << arr[i]->getNombre();
+        }
+
+    }
+  }
     else if (opcion == "3"){
       #define PELICULAS "Peliculas.csv"
       ifstream archivo(PELICULAS);
@@ -168,10 +193,12 @@ cout<<calificacion<<endl;
         getline(stream,CALIFICACION,delimitador);
 
         calificacion = stod(CALIFICACION);
-cout<<calificacion<<endl;
         arr[c] = new Peliculas(ID,NOMBRE,DURACION,GENERO,calificacion);
         c+=1;
       }
+      for (int i=0; i < c; i++){
+        cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
+    }
     }
 
   return 0;
