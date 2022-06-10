@@ -3,14 +3,14 @@
 
 #include "Videos.h"
 
-class Peliculas : Videos {
+class Peliculas : public Videos {
 private:
 public:
   Peliculas();
-  Peliculas(std::string,std::string,std::string,std::string, std::string);
-  double mostrarCalificacion();
-  double calificarVideo();
-}
+  Peliculas(std::string,std::string,std::string,std::string,double calificacion);
+  /*double mostrarCalificacion();
+  double calificarVideo();*/
+};
 
 
 

@@ -3,7 +3,7 @@
 Videos :: Videos(){}
 
 Videos :: Videos(std::string id,std::string nombre,std::string duracion,
-  std::string genero, int calificacion){
+  std::string genero, double calificacion){
   this -> id = id;
   this -> nombre = nombre;
   this -> duracion = duracion;
@@ -24,6 +24,6 @@ std::string Videos:: getNombre(){
   return nombre;
 }
 
-float Videos :: getCalif(){
+double Videos :: getCalif(){
   return calificacion;
 }
