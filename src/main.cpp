@@ -4,9 +4,8 @@
 #include "Videos.cpp"
 #define NOMBRE_ARCHIVO "Peliculas.csv"
 
-
-
 using namespace std;
+
 
 int main(){
   ifstream archivo(NOMBRE_ARCHIVO);
@@ -25,7 +24,6 @@ int main(){
   }
   Videos video1(ID,NOMBRE,DURACION,GENERO);
   cout<<video1.getNombre()<<endl;
-  
   archivo.close();
   return 0;
 }
