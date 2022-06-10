@@ -4,15 +4,14 @@
 #include <string>
 
 class Videos {
-  Protected:
+  protected:
     std::string id, nombre, duracion, genero;
-    std::string datos[10000]
-  Public:
+  public:
   Videos();
-  Videos(std::string,std::string,std::string,std::string, std::string);
-  virtual double mostrarCalificacion(std::string datos);
-  virtual double calificarVideo(std::string datos);
-
+  Videos(std::string,std::string,std::string,std::string);
+  /*virtual double mostrarCalificacion();
+  virtual double calificarVideo();*/
+  std::string getNombre();
 };
 
 #endif // VIDEO_H_INCLUDED
