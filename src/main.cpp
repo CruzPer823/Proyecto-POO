@@ -73,7 +73,26 @@ int main(){
         opcion1 = stoi(opcion);
       }
         if(opcion2 == "1"){
-          cout << "xd" << endl;
+          string genero;
+          int generoint;
+          cout << "Ingrese el género que desea buscar: "<<"\n"<<
+          "1-. Miniserie"<<endl;
+          cin>>genero;
+          while (isNumber(genero)==false){
+            cout<<"Ingrese una cantidad válidad entre 0 y 5"<<endl;
+            cin>>genero;
+          }
+          generoint=stoi(genero);
+          while (generoint > 5){
+            cout << "Ingrese una cantidad válida entre 0 y 5"<<endl;
+            cin>>genero;
+            generoint=stoi(genero);
+          }
+          for (int i=0; i < c; i++){
+            if ( arr[i]->getGen() == "Miniserie"){
+              cout<<arr[i]->getNombre()<<endl;
+            }
+          }
         }
         else if (opcion2=="2"){
           string usuarioCalif;

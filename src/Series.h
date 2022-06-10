@@ -10,7 +10,8 @@ public:
   Series();
   Series(std::string,std::string,std::string,
     std::string,std::string, std::string, std::string, double);
-
+  std::string getGen();
+  std::string getNombre();
 };
 
 #endif // SERIES_H_INCLUDE

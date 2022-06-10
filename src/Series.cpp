@@ -11,3 +11,11 @@ Series::Series(std::string id,std::string idCapitulo,std::string temporada,
   this -> temporada = temporada;
   this -> idCapitulo = idCapitulo;
 }
+
+std::string Series::getGen(){
+  return genero;
+}
+
+std::string Series::getNombre(){
+  return nombre;
+}

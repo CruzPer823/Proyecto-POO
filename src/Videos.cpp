@@ -27,3 +27,7 @@ std::string Videos:: getNombre(){
 double Videos :: getCalif(){
   return calificacion;
 }
+
+std::string Videos:: getGen(){
+  return genero;
+}
