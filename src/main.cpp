@@ -75,22 +75,33 @@ int main(){
       }
         if(opcion2 == "1"){
           string genero;
+          string generos[100];
+          generos[0]="Thriller";
+          generos[1]="SciFi";
+          generos[2]=" Dramas";
+          generos[3]="Comedia";
+          generos[4]= "Terror";
+          generos[5]= "Animacion";
+          generos[6]="Miniserie";
           int generoint;
-          cout << "Ingrese el género que desea buscar: "<<"\n"<<
-          "1-. Miniserie"<<endl;
+          cout << "Ingrese el género que desea buscar: "<<endl;
+          for (int l=0;l<7;l++){
+            cout<<l+1<<"-."<<generos[l]<<endl;
+          }
           cin>>genero;
           while (isNumber(genero)==false){
-            cout<<"Ingrese una cantidad válidad entre 0 y 5"<<endl;
+            cout<<"Ingrese una cantidad válidad entre 1 y 7"<<endl;
             cin>>genero;
           }
           generoint=stoi(genero);
-          while (generoint > 5){
-            cout << "Ingrese una cantidad válida entre 0 y 5"<<endl;
+          while (generoint > 8){
+            cout << "Ingrese una cantidad válida entre 1 y 7"<<endl;
             cin>>genero;
             generoint=stoi(genero);
           }
+          generoint=stoi(genero)-1;
           for (int i=0; i < c; i++){
-            if ( arr[i]->getGen() == "Miniserie"){
+            if ( arr[i]->getGen() == generos[generoint]){
               cout<<arr[i]->getNombre()<<endl;
             }
           }

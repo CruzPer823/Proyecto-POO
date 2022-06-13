@@ -2,14 +2,10 @@
 
 Series::Series():Videos(){}
 
-Series::Series(std::string id,std::string idCapitulo,std::string temporada,
-  std::string nombreCapitulo,
-  std::string nombre,std::string duracion,
-  std::string genero, double calificacion):Videos(id, nombre,
-  duracion, genero, calificacion){
-  this -> nombreCapitulo = nombreCapitulo;
-  this -> temporada = temporada;
-  this -> idCapitulo = idCapitulo;
+Series::Series(std::string id,
+  std::string nombre, std::string genero, std::string temporadas):Videos(id, nombre,
+ genero){
+  this -> temporadas = temporadas;
 }
 
 std::string Series::getGen(){
@@ -18,8 +14,4 @@ std::string Series::getGen(){
 
 std::string Series::getNombre(){
   return nombre;
-}
-
-double Series:: getCalif(){
-  return calificacion;
 }
