@@ -2,10 +2,11 @@
 #define EPISODIOS_H_INCLUDE
 
 #include "Series.h"
+#include "Videos.h"
 
 class Episodios : public Series {
 private:
-  std::string id,id_episodio,nombre,duracion;
+  std::string id_episodio;
   double calificacion;
   int temporada;
 public:

@@ -20,9 +20,10 @@ std::string Episodios::getNombre(){
 }
 
 double Episodios:: getCalif(){
-  return 0;
+  return calificacion;
 }
 
 std::string Episodios:: getID(){
+
   return id;
 }
