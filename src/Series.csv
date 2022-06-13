@@ -1,2 +1,4 @@
 ID,ID_EPISODIO,TEMPORADA,NOMBRE_CAPITULO,NOMBRE,DURACION,GENERO,CALIFICACION
-2,E1,S1,Medio Juego,Gambito de dama,48min,Miniserie,5.1
+3,E4,S1,Medio Juego,Gambito de dama,48min,Miniserie,4
+4,E1,S1,Aperturas,Gambito de dama,59min,Miniserie,4
+5,E4,S3,La prueba del sauna,Stranger Things, 53min, Drama,4

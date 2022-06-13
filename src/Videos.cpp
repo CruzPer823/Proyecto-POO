@@ -19,15 +19,3 @@ Videos :: Videos(std::string id,std::string nombre,std::string duracion,
 /*double Videos ;; calificarVideo(){
   // que haga una cada para darle la oportunidad al wey del usuario y que su calificacion llene algo
 }*/
-
-std::string Videos:: getNombre(){
-  return nombre;
-}
-
-double Videos :: getCalif(){
-  return calificacion;
-}
-
-std::string Videos:: getGen(){
-  return genero;
-}

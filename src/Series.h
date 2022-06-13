@@ -12,6 +12,7 @@ public:
     std::string,std::string, std::string, std::string, double);
   std::string getGen();
   std::string getNombre();
+  double getCalif();
 };
 
 #endif // SERIES_H_INCLUDE

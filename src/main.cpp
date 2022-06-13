@@ -55,8 +55,9 @@ int main(){
         getline(stream,CALIFICACION,delimitador);
 
         calificacion = stod(CALIFICACION);
-        arr[c] = new Videos(ID,NOMBRE,DURACION,GENERO,calificacion);
+        arr[c] = new Peliculas(ID,NOMBRE,DURACION,GENERO,calificacion);
         c+=1;
+
       }
       cout << "Le gustaría desplegar por género o por calificación"<<"\n"<<
       "1-. Por género" << "\n" << "2-. Por calificación"<<"\n"<<
@@ -110,7 +111,7 @@ int main(){
             cin >> usuarioCalifInt;
           }
           for (int i=0; i < c; i++){
-            if ( arr[i]->getCalif() > usuarioCalifInt){
+            if ( arr[i]->getCalif() >= usuarioCalifInt){
               cout<<arr[i]->getNombre()<<endl;
             }
           }
@@ -128,6 +129,7 @@ int main(){
       getline(archivo, linea);
       string ID,ID_EPISODIO,TEMPORADA,NOMBRE_CAPITULO, NOMBRE,DURACION,GENERO,CALIFICACION;
       double calificacion;
+      string series[100];
       int c;
       string opcion3,calificacionSerie;
       int opcion3int;
@@ -152,13 +154,7 @@ int main(){
       }
       cout << "Escoge una de las siguientes series: "<<endl;
       for (int i=0; i < c; i++){
-        if (c>1 && arr[i] -> getNombre() == arr[i+1] -> getNombre()){
-            cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
-        }
-        else{
           cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
-        }
-
     }
       cin >> opcion3;
       opcion3int = stoi(opcion3);
@@ -167,8 +163,8 @@ int main(){
       califint = stod(calificacionSerie);
       for (int i=0; i < c; i++){
 
-        if(arr[i]->getNombre() == arr[opcion3int-1]->getNombre() && arr[i]->getCalif()>califint){
-          cout << arr[i]->getNombre();
+        if(arr[i]->getNombre() == arr[opcion3int-1]->getNombre() && arr[i]->getCalif()>=califint){
+          cout << arr[i]->getNombre()<<endl;
         }
 
     }
@@ -176,6 +172,8 @@ int main(){
     else if (opcion == "3"){
       #define PELICULAS "Peliculas.csv"
       ifstream archivo(PELICULAS);
+      string usuarioCalifP;
+      double usuarioCalifpint;
       string linea;
       char delimitador = ',';
       getline(archivo, linea);
@@ -196,9 +194,22 @@ int main(){
         arr[c] = new Peliculas(ID,NOMBRE,DURACION,GENERO,calificacion);
         c+=1;
       }
+      cout << "Ingrese calificación que desee buscar"<<endl;
+      cin >> usuarioCalifP;
+      while (isNumber(usuarioCalifP)==false){
+        cout<<"Ingrese una cantidad válidad entre 0 y 5"<<endl;
+        cin>>usuarioCalifP;
+      }
+      usuarioCalifpint=stod(usuarioCalifP);
+      while (usuarioCalifpint > 5){
+        cout << "Ingrese una cantidad válida entre 0 y 5"<<endl;
+        cin >> usuarioCalifpint;
+      }
       for (int i=0; i < c; i++){
-        cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
-    }
+        if ( arr[i]->getCalif() >= usuarioCalifpint){
+          cout<<arr[i]->getNombre()<<endl;
+        }
+      }
     }
 
   return 0;

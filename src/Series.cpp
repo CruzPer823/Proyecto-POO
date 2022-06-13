@@ -19,3 +19,7 @@ std::string Series::getGen(){
 std::string Series::getNombre(){
   return nombre;
 }
+
+double Series:: getCalif(){
+  return calificacion;
+}

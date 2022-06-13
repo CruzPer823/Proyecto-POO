@@ -12,9 +12,9 @@ class Videos {
   Videos(std::string,std::string,std::string,std::string,double calificacion);
   /*virtual double mostrarCalificacion();
   virtual double calificarVideo();*/
-  virtual std::string getNombre();
-  virtual std::string getGen();
-  double getCalif();
+  virtual std::string getNombre()=0;
+  virtual std::string getGen()=0;
+  virtual double getCalif()=0;
 
 };
 

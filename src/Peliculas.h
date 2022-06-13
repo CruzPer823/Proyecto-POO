@@ -10,6 +10,9 @@ public:
   Peliculas(std::string,std::string,std::string,std::string,double calificacion);
   /*double mostrarCalificacion();
   double calificarVideo();*/
+  std::string getNombre();
+  std::string getGen();
+  double getCalif();
 };
 
 
