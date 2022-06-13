@@ -5,14 +5,15 @@
 
 class Series : public Videos{
 private:
-  std::string id,nombre,genero;
   int temporadas;
 public:
   Series();
-  Series(std::string,std::string,std::string,
-    std::string);
+  Series(std::string,std::string,std::string,int);
+  Series(std::string, std::string);
   std::string getGen();
   std::string getNombre();
+  std::string getID();
+  double getCalif();
 };
 
 #endif // SERIES_H_INCLUDE

@@ -10,12 +10,14 @@ class Videos {
   public:
   Videos();
   Videos(std::string,std::string,std::string,std::string,double calificacion);
+  Videos( std::string,std::string, std::string );
+  Videos(std::string, std::string);
   /*virtual double mostrarCalificacion();
   virtual double calificarVideo();*/
   virtual std::string getNombre()=0;
   virtual std::string getGen()=0;
-  virtual double getCalif()=0;
-
+  virtual double getCalif() = 0;
+  virtual std::string getID() = 0;
 };
 
 #endif // VIDEO_H_INCLUDED

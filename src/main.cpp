@@ -6,7 +6,7 @@
 #include "Videos.cpp"
 #include "Series.cpp"
 #include "Peliculas.cpp"
-
+#include "Episodios.cpp"
 
 using namespace std;
 
@@ -17,6 +17,7 @@ bool isNumber(const string& str){
 
 int main(){
   Videos* arr[100];
+  Videos* arrEPi[100];
   string opcion,opcion2;
   int opcion1;
   cout<<"BIENVENIDO AL MENU DE VIDEOS"<<"\n"<<
@@ -138,29 +139,24 @@ int main(){
       string linea;
       char delimitador = ',';
       getline(archivo, linea);
-      string ID,ID_EPISODIO,TEMPORADA,NOMBRE_CAPITULO, NOMBRE,DURACION,GENERO,CALIFICACION;
-      double calificacion;
-      string series[100];
+      string ID,NOMBRE,GENERO,TEMPORADAS;
       int c;
       string opcion3,calificacionSerie;
       int opcion3int;
+      int temporadas;
       double califint;
       c=0;
       while (getline(archivo,linea)){
         stringstream stream(linea);
 
         getline(stream,ID,delimitador);
-        getline(stream,ID_EPISODIO,delimitador);
-        getline(stream,TEMPORADA,delimitador);
-        getline(stream,NOMBRE_CAPITULO,delimitador);
         getline(stream,NOMBRE,delimitador);
-        getline(stream,DURACION,delimitador);
         getline(stream,GENERO,delimitador);
-        getline(stream,CALIFICACION,delimitador);
+        getline(stream,TEMPORADAS,delimitador);
 
-        calificacion = stod(CALIFICACION);
+        temporadas = stoi(TEMPORADAS);
 
-        arr[c] = new Series(ID,ID_EPISODIO,TEMPORADA,NOMBRE_CAPITULO,NOMBRE,DURACION,GENERO,calificacion);
+        arr[c] = new Series(ID,NOMBRE,GENERO,temporadas);
         c+=1;
       }
       cout << "Escoge una de las siguientes series: "<<endl;
@@ -172,13 +168,35 @@ int main(){
       cout << "Ingresa una calificacion: "<<endl;
       cin>>calificacionSerie;
       califint = stod(calificacionSerie);
-      for (int i=0; i < c; i++){
+        #define EPISODIOS "Episodios.csv"
+        ifstream archivo2(EPISODIOS);
+        getline(archivo2, linea);
+        string ID2,ID_EPISODIO2,NOMBRE2,DURACION2,CALIFICACION2,TEMPORADA2;
+        int x;
+        int temporada;
+        double califint2;
+        x=0;
+        while (getline(archivo,linea)){
+          stringstream stream(linea);
 
-        if(arr[i]->getNombre() == arr[opcion3int-1]->getNombre() && arr[i]->getCalif()>=califint){
-          cout << arr[i]->getNombre()<<endl;
+          getline(stream,ID2,delimitador);
+          getline(stream,ID_EPISODIO2,delimitador);
+          getline(stream,NOMBRE2,delimitador);
+          getline(stream,DURACION2,delimitador);
+          getline(stream,CALIFICACION2,delimitador);
+          getline(stream,TEMPORADA2,delimitador);
+
+          temporada = stoi(TEMPORADA2);
+          califint2 = stod(CALIFICACION2);
+          arrEPi[c] = new Episodios(ID2,ID_EPISODIO2,NOMBRE2,DURACION2,califint2,temporada);
+          x+=1;
+        }
+        for (int n=0; n<x;n++){
+          if(arrEPi[n]->getID() == arr[opcion3int-1]->getID()){
+            cout << arrEPi[n]->getNombre()<<endl;
+          }
         }
 
-    }
   }
     else if (opcion == "3"){
       #define PELICULAS "Peliculas.csv"

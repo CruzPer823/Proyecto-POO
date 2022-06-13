@@ -4,7 +4,6 @@
 #include "Videos.h"
 
 class Peliculas : public Videos {
-private:
 public:
   Peliculas();
   Peliculas(std::string,std::string,std::string,std::string,double calificacion);
@@ -13,6 +12,7 @@ public:
   std::string getNombre();
   std::string getGen();
   double getCalif();
+  std::string getID();
 };
 
 

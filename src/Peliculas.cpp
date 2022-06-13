@@ -16,3 +16,7 @@ std::string Peliculas :: getGen(){
 double Peliculas :: getCalif(){
   return calificacion;
 }
+
+std::string Peliculas::getID(){
+  return id;
+}

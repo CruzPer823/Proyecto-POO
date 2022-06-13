@@ -2,10 +2,12 @@
 
 Series::Series():Videos(){}
 
-Series::Series(std::string id,
-  std::string nombre, std::string genero, std::string temporadas):Videos(id, nombre,
- genero){
+Series::Series(std::string id, std::string nombre, std::string genero,int temporadas):
+Videos(id, nombre, genero ){
   this -> temporadas = temporadas;
+}
+
+Series::Series(std::string id, std::string nombre):Videos(id, nombre){
 }
 
 std::string Series::getGen(){
@@ -14,4 +16,12 @@ std::string Series::getGen(){
 
 std::string Series::getNombre(){
   return nombre;
+}
+
+double Series:: getCalif(){
+  return 0;
+}
+
+std::string Series:: getID(){
+  return id;
 }
