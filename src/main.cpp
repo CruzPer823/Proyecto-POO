@@ -17,12 +17,13 @@ bool isNumber(const string& str){
 
 
 int main(){
+  Videos* cal[2];
   Videos* arr[100];
   Videos* arrepi[100];
-  string opcion,opcion2,opcion4,ID,NOMBRE,DURACION,GENERO,CALIFICACION,TEMPORADAS,opcion3,
-  calificacionSerie,linea,linea2,linea3,usuarioCalifP,ID_EPISODIO,TEMPORADA;
+  string opcion,opcion2,opcion4,opcion5,ID,NOMBRE,DURACION,GENERO,CALIFICACION,TEMPORADAS,opcion3,
+  calificacionSerie,line,linea,linea2,linea3,usuarioCalifP,ID_EPISODIO,TEMPORADA;
   char delimitador = ',';
-  int opcion1,c1=0,c2=1,c3=0,opcion3int,temporadas,temporada, e=0;
+  int opcion1,c1=0,c2=1,c3=0,opcion3int,opcion5int,temporadas,temporada, e=0;
   double califint,califint2 ,calificacion, usuarioCalifpint;
   #define SERIES "Series.csv"
       ifstream archivo(SERIES);
@@ -294,20 +295,43 @@ int main(){
  //Opción 4
       else if(opcion=="4"){
         cout<<"***TITULOS***\n"<<endl;
-        for(int i=0;i<11;i++){
-          cout<<i+1<<"-."<<arr[i]->getNombre()<<endl;
+        for(int i=4;i<11;i++){
+          cout<<i-3<<"-."<<arr[i]->getNombre()<<endl;
+        }
+        for(int i=0; i<147;i++){
+          cout<<i+8<<"-."<<arrepi[i]->getNombre()<<endl;
         }
         cout<<"Introduzca el título a calificar: "<<endl;
-        cin >> opcion3;
-        while (isNumber(opcion3)==false){
+        cin >> opcion5;
+        while (isNumber(opcion5)==false){
               cout<<"Ingrese un valor válido"<<endl;
-              cin>>opcion3;
+              cin>>opcion5;
             }
-            opcion3int=stod(opcion3);
-            while (opcion3int > 11){
-              cout << "Ingrese una cantidad válida entre el 1 y 11"<<endl;
-              cin >> opcion3;
+            opcion5int=stod(opcion5);
+            while (opcion5int > 154){
+              cout << "Ingrese una cantidad válida entre el 1 y 151"<<endl;
+              cin >> opcion5;
             }
+            cout<<"Introduzca la calificacion deseada en la escala del 1 al 10: "<<endl;
+            cin >> usuarioCalifP;
+        while (isNumber(usuarioCalifP)==false){
+          cout<<"Ingrese una cantidad válida entre 0 y 10"<<endl;
+          cin>>usuarioCalifP;
+        }
+        usuarioCalifpint=stod(usuarioCalifP);
+        while (usuarioCalifpint > 10){
+          cout << "Ingrese una cantidad válida entre 0 y 10"<<endl;
+          cin >> usuarioCalifpint;
+        }
+        if((opcion5int)<=7){
+          cout<<"\nLa antigua calificación es: "<<arr[opcion5int+3]->getCalif()<<endl;
+          *arr[opcion5int+3]+usuarioCalifpint;
+          cout<<"\nLa nueva calificación es: "<<arrepi[opcion5int+3]->getCalif()<<"\n"<<endl;
+        }else if((opcion5int)>7){
+          cout<<"\nLa antigua calificación es: "<<arrepi[opcion5int-8]->getCalif()<<endl;
+          *arrepi[opcion5int-8]+usuarioCalifpint;
+          cout<<"\nLa nueva calificación es: "<<arrepi[opcion5int-8]->getCalif()<<"\n"<<endl;
+        }
              cout<<"¿Qué desea realizar?\n1-.Volver al menú\n2-.Salir"<<endl;
             cin >> opcion4;
           while (isNumber(opcion4) == false){
@@ -319,7 +343,6 @@ int main(){
             cout<<"Ingrese una opción válida" << endl;
             cin>>opcion4;
           }
-          
           opcion1 = stoi(opcion4);
             if(opcion1== 1){
               e=0;
