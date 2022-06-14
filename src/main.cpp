@@ -220,7 +220,7 @@ int main(){
             opcion3int=stod(opcion3);
             while (opcion3int > 4){
               cout << "Ingrese una cantidad válida entre el 1 y 4"<<endl;
-              cin >> opcion3;
+              cin >> opcion3int;
             }
         cout << "Ingresa una calificacion: "<<endl;
         cin>>calificacionSerie;
@@ -231,7 +231,7 @@ int main(){
             califint=stod(calificacionSerie);
             while (califint > 10){
               cout << "Ingrese una cantidad válida entre el 1 y 10"<<endl;
-              cin >> calificacionSerie;
+              cin >> califint;
             }
           for (int n=0; n < c3;n++){
             if (arrepi[n]->getID() == arr[opcion3int-1]->getID() && arrepi[n]->getCalif() >= califint){
@@ -247,7 +247,7 @@ int main(){
           opcion1 = stoi(opcion4);
           while (opcion1 > 2){
             cout<<"Ingrese una opción válida" << endl;
-            cin>>opcion4;
+            cin>>opcion1;
           }
           opcion1 = stoi(opcion4);
             if(opcion1== 1){
@@ -274,18 +274,20 @@ int main(){
             arr[i]->mostrarDatos();
           }
         }
+        string opcion5;
          cout<<"¿Qué desea realizar?\n1-.Volver al menú\n2-.Salir"<<endl;
-            cin >> opcion4;
-          while (isNumber(opcion4) == false){
+            cin >> opcion5;
+          while (isNumber(opcion5) == false){
             cout << "Ingrese una opción válida"<<endl;
-            cin>>opcion4;
+            cin>>opcion5;
           }
-          opcion1 = stoi(opcion4);
+
+          opcion1 = stoi(opcion5);
           while (opcion1 > 2){
             cout<<"Ingrese una opción válida" << endl;
-            cin>>opcion4;
+            cin>>opcion1;
           }
-          opcion1 = stoi(opcion4);
+          opcion1 = stoi(opcion5);
             if(opcion1== 1){
               e=0;
             }else{
@@ -310,7 +312,7 @@ int main(){
             opcion5int=stod(opcion5);
             while (opcion5int > 154){
               cout << "Ingrese una cantidad válida entre el 1 y 151"<<endl;
-              cin >> opcion5;
+              cin >> opcion5int;
             }
             cout<<"Introduzca la calificacion deseada en la escala del 1 al 10: "<<endl;
             cin >> usuarioCalifP;
@@ -341,7 +343,7 @@ int main(){
           opcion1 = stoi(opcion4);
           while (opcion1 > 2){
             cout<<"Ingrese una opción válida" << endl;
-            cin>>opcion4;
+            cin>>opcion1;
           }
           opcion1 = stoi(opcion4);
             if(opcion1== 1){
