@@ -12,6 +12,7 @@ private:
 public:
   Episodios();
   Episodios(std::string, std::string, std::string, std::string, double, int);
+  Episodios(double);
   std::string getNombre();
   std::string getGen();
   double getCalif();
