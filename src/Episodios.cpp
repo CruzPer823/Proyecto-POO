@@ -27,3 +27,10 @@ std::string Episodios:: getID(){
 
   return id;
 }
+
+void Episodios::mostrarDatos(){
+  std::cout<<"\nTitulo: "<<nombre<<
+  "\nTemporada: "<<temporada<<
+  "\nDuracion: "<<duracion<<
+  "\nCalificacion: "<<calificacion<<"\n";
+}

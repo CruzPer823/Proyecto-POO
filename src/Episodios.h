@@ -16,6 +16,7 @@ public:
   std::string getGen();
   double getCalif();
   std::string getID();
+  void mostrarDatos();
 };
 
 
