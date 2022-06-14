@@ -9,6 +9,7 @@ Episodios :: Episodios(std::string id, std::string id_episodio, std::string nomb
   this -> id_episodio = id_episodio;
   this -> temporada = temporada;
   this -> calificacion = calificacion;
+  this->duracion=duracion;
 }
 
 std::string Episodios::getGen(){

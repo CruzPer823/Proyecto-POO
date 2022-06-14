@@ -17,6 +17,9 @@ public:
   double getCalif();
   std::string getID();
   void mostrarDatos();
+   void operator+(double val){
+    this-> calificacion=((calificacion*50)+val)/51;
+  }
 };
 
 

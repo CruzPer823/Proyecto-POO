@@ -17,6 +17,9 @@ class Videos {
   virtual double getCalif() = 0;
   virtual std::string getID() = 0;
   virtual void mostrarDatos()=0;
+  virtual void operator+(double val){
+    this-> calificacion=calificacion*50+val/51;
+  }
 };
 
 #endif // VIDEO_H_INCLUDED
