@@ -25,3 +25,9 @@ double Series:: getCalif(){
 std::string Series:: getID(){
   return id;
 }
+
+void Series::mostrarDatos(){
+  std::cout<< "\nSerie: "<<nombre<<"\n"
+  "Temporadas: "<<temporadas<<
+  "\nGenero: "<<genero<<"\n";
+}

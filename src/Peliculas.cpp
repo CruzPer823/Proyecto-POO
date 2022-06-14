@@ -20,3 +20,10 @@ double Peliculas :: getCalif(){
 std::string Peliculas::getID(){
   return id;
 }
+
+void Peliculas::mostrarDatos(){
+  std::cout<<"\nPelicula: "<<nombre<<
+  "\nDuracion: "<<duracion<<
+  "\nGenero: "<<genero<<
+  "\nCalificacion: "<<calificacion<<"\n";
+}

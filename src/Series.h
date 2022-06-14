@@ -13,6 +13,7 @@ public:
   std::string getGen();
   std::string getNombre();
   std::string getID();
+  void mostrarDatos();
   double getCalif();
 };
 
